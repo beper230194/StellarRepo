@@ -31,3 +31,11 @@ def truncate(s: str, n: int) -> str:
     if len(s) <= n:
         return s
     return s[:n] + "..."
+
+def slugify(text: str) -> str:
+    """Convert a string to a URL-safe slug."""
+    import re
+    text = text.lower().strip()
+    text = re.sub(r'[^\w\s-]', '', text)
+    text = re.sub(r'[\s_-]+', '-', text)
+    return re.sub(r'^-+|-+$', '', text)
