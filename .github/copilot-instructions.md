@@ -14,3 +14,8 @@
 - Make one small change at a time, explain it before applying
 - Run tests after every change
 - Flag any security-related code and ask for human review
+## TextAnalyser Module (active feature)
+- `TextAnalyser` is a class, not module-level functions
+- All methods raise `ValueError` for empty input where the result is undefined
+- Punctuation stripping uses `str.strip(string.punctuation)` — no regex
+- Do not use NLTK or any external library
